@@ -7,17 +7,19 @@ app.use(express.json());
 
 const DATA_FILE = "./data.json";
 
-// Ensure data file exists
 if (!fs.existsSync(DATA_FILE)) {
   fs.writeJsonSync(DATA_FILE, []);
 }
 
-// Helper: compute SHA256 hash
 function getHash(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
 }
 
-// POST /api/strings — analyze and store string
+
+app.get("/", (req, res) => {
+  res.send("✅ String Analyzer API is live!");
+});
+
 app.post("/api/strings", async (req, res) => {
   try {
     const { value } = req.body;
@@ -28,23 +30,24 @@ app.post("/api/strings", async (req, res) => {
     const data = await fs.readJson(DATA_FILE);
     const hash = getHash(value);
 
-    // Check if already exists
+    
     const exists = data.find((s) => s.sha256_hash === hash);
     if (exists) {
       return res.status(400).json({ error: "String already exists in the system" });
     }
 
     const record = {
+      id: data.length + 1,
       value,
       length: value.length,
-      isPalindrome: value.toLowerCase().replace(/\s+/g, "") === value.toLowerCase().replace(/\s+/g, "").split("").reverse().join(""),
+      isPalindrome: value === value.split("").reverse().join(""),
       sha256_hash: hash,
-      createdAt: new Date().toISOString(),
-      id: data.length + 1
+      createdAt: new Date().toISOString()
     };
 
     data.push(record);
     await fs.writeJson(DATA_FILE, data, { spaces: 2 });
+
     res.json(record);
   } catch (err) {
     console.error("POST /api/strings error:", err);
@@ -52,7 +55,6 @@ app.post("/api/strings", async (req, res) => {
   }
 });
 
-// GET /api/strings — get all
 app.get("/api/strings", async (req, res) => {
   try {
     const data = await fs.readJson(DATA_FILE);
@@ -63,7 +65,6 @@ app.get("/api/strings", async (req, res) => {
   }
 });
 
-// GET /api/strings/:id — get one
 app.get("/api/strings/:id", async (req, res) => {
   try {
     const data = await fs.readJson(DATA_FILE);
