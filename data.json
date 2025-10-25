@@ -1,0 +1,72 @@
+[
+  {
+    "id": "e00f9ef51a95f6e854862eed28dc0f1a68f154d9f75ddd841ab00de6ede9209b",
+    "value": "racecar",
+    "properties": {
+      "length": 7,
+      "is_palindrome": true,
+      "unique_characters": 4,
+      "word_count": 1,
+      "sha256_hash": "e00f9ef51a95f6e854862eed28dc0f1a68f154d9f75ddd841ab00de6ede9209b",
+      "character_frequency_map": {
+        "r": 2,
+        "a": 2,
+        "c": 2,
+        "e": 1
+      }
+    },
+    "created_at": "2025-10-25T19:48:06.818Z"
+  },
+  {
+    "id": "765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21",
+    "value": "madam",
+    "properties": {
+      "length": 5,
+      "is_palindrome": true,
+      "unique_characters": 3,
+      "word_count": 1,
+      "sha256_hash": "765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21",
+      "character_frequency_map": {
+        "m": 2,
+        "a": 2,
+        "d": 1
+      }
+    },
+    "created_at": "2025-10-25T19:53:03.829Z"
+  },
+  {
+    "id": "079cdc52e64462dfac5124edf6b1b923250911071b3b9abbe00ab1f5ae837b57",
+    "value": "mad",
+    "properties": {
+      "length": 3,
+      "is_palindrome": false,
+      "unique_characters": 3,
+      "word_count": 1,
+      "sha256_hash": "079cdc52e64462dfac5124edf6b1b923250911071b3b9abbe00ab1f5ae837b57",
+      "character_frequency_map": {
+        "m": 1,
+        "a": 1,
+        "d": 1
+      }
+    },
+    "created_at": "2025-10-25T20:01:30.205Z"
+  },
+  {
+    "id": "1eae6be9f8ddd9eb2e85c3ad9dafcc563a9b8405e71fdb62297acf4ee7790150",
+    "value": "madams",
+    "properties": {
+      "length": 6,
+      "is_palindrome": false,
+      "unique_characters": 4,
+      "word_count": 1,
+      "sha256_hash": "1eae6be9f8ddd9eb2e85c3ad9dafcc563a9b8405e71fdb62297acf4ee7790150",
+      "character_frequency_map": {
+        "m": 2,
+        "a": 2,
+        "d": 1,
+        "s": 1
+      }
+    },
+    "created_at": "2025-10-25T20:08:39.160Z"
+  }
+]
