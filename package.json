@@ -1,19 +1,31 @@
 {
   "name": "string-analyzer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple REST API that analyzes strings and stores results persistently using JSON file storage.",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^2.2.0",
-    "express": "^5.1.0"
+    "express": "^4.19.2",
+    "body-parser": "^1.20.2",
+    "fs-extra": "^11.1.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
-  }
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.x"
+  },
+  "keywords": [
+    "string-analyzer",
+    "express",
+    "api",
+    "json",
+    "nodejs"
+  ],
+  "author": "Olamide Wazir Akinwande",
+  "license": "MIT"
 }
