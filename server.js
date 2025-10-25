@@ -2,7 +2,6 @@ const express = require("express");
 const fs = require("fs");
 const crypto = require("crypto");
 const app = express();
-const PORT = 3000;
 const DATA_FILE = "./data.json";
 
 app.use(express.json());
@@ -168,5 +167,5 @@ app.get("/strings/filter-by-natural-language", (req, res) => {
     },
   });
 });
-
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
